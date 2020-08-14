@@ -2,12 +2,11 @@ import React from 'react';
 import Mensagens from "./components/mensagens/MensagensComp"
 
 
-
 function App() {
   return (
-    <div>
+    <ContainerGrande>
         <Mensagens/>
-    </div>
+    </ContainerGrande>
   );
 }
 

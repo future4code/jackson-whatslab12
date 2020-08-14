@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export class Mensagens extends React.Component{
     state = {
         message: [
@@ -22,7 +23,7 @@ export class Mensagens extends React.Component{
 
     novoUsuario = () => {
         const novaMensagem = {
-            remtente: this.state.valorInputRemetente,
+            remetente: this.state.valorInputRemetente,
             mensagem: this.state.valorInputMensagem
         };
 
@@ -51,7 +52,7 @@ export class Mensagens extends React.Component{
             <div>
                 {listaDeMensagem}
             </div>
-          );
+        );
     }
 };
 

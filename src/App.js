@@ -7,7 +7,7 @@ const ContainerGrande = styled.main`
     flex-direction: column;
     align-self: center;
     border: 1px solid;
-    width: 300px;
+    width: 500px;
     height: 20em;
     margin-left: 30em;
     background-color:#b8bfd8;

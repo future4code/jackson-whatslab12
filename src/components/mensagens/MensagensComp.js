@@ -16,9 +16,31 @@ const CaixaMensagem = styled.div`
     margin-top: 10px;
     background-color: white;
 `
+const Botao = styled.button`
+        width:85px;
+        height:25px;
+        margin-left:10px;
+        font-weight:900;
+`
+
 
 const InputMensagem = styled.input`
-    
+    border-radius:5px;
+    height:20px;
+    margin-top:75px;
+    padding-left:10px;
+    padding-right:10px;
+    margin-left: 5px;
+
+    width:${props => {
+        if(props.tamanho === "pequeno"){
+            return "75px"
+
+        }else if(props.tamanho === "grande"){
+            return "250px"
+        }
+
+    }};
      
 `
 
@@ -77,18 +99,18 @@ export class Mensagens extends React.Component{
                  
                 <div>
                     
-                 <InputMensagem
+                 <InputMensagem tamanho={"pequeno"}
                      value={this.state.valorInputRemetente}
                      onChange={this.onChangeInputRemetente}
                      placeholder={"usuário"}
                      />
-                 <InputMensagem
+                 <InputMensagem tamanho ={"grande"}
                      value={this.state.valorInputMensagem}
                      onChange={this.onChangeInputMensagem}
                      placeholder={"mensagem"}
                      />
 
-                <button onClick={this.novoUsuario}>Enviar</button>
+                <Botao onClick={this.novoUsuario}>Enviar</Botao>
                  
                     
                 </div>

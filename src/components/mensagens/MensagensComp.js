@@ -1,4 +1,26 @@
 import React from 'react'
+import styled from "styled-components"
+
+
+const CaixaMensagem = styled.div`
+    display:flex;
+    flex-direction: column;
+    border: 1px solid #d3d3d3;
+    margin-left: 5px;
+    padding: 10px;
+    margin-bottom: 12px;
+    height: 28px;
+    margin-right: 10px;
+    width: 208px;
+    border-radius: 30px;
+    margin-top: 10px;
+    background-color: white;
+`
+
+const InputMensagem = styled.input`
+    
+     
+`
 
 export class Mensagens extends React.Component{
     state = {
@@ -22,7 +44,7 @@ export class Mensagens extends React.Component{
 
     novoUsuario = () => {
         const novaMensagem = {
-            remtente: this.state.valorInputRemetente,
+            remetente: this.state.valorInputRemetente,
             mensagem: this.state.valorInputMensagem
         };
 
@@ -41,18 +63,41 @@ export class Mensagens extends React.Component{
     render() {
         const listaDeMensagem = this.state.message.map ((messages) => {
             return (
-                <p>
+                <CaixaMensagem>
                     {messages.remetente} - {messages.mensagem}
-                </p>
+                </CaixaMensagem>
             );
         });
 
         return (
             <div>
-                {listaDeMensagem}
+                <div>
+                    {listaDeMensagem}
+                </div>
+                 
+                <div>
+                    
+                 <InputMensagem
+                     value={this.state.valorInputRemetente}
+                     onChange={this.onChangeInputRemetente}
+                     placeholder={"usuário"}
+                     />
+                 <InputMensagem
+                     value={this.state.valorInputMensagem}
+                     onChange={this.onChangeInputMensagem}
+                     placeholder={"mensagem"}
+                     />
+
+                <button onClick={this.novoUsuario}>Enviar</button>
+                 
+                    
+                </div>
             </div>
-          );
+        
+        );
     }
+
+    
 };
 
 export default Mensagens;

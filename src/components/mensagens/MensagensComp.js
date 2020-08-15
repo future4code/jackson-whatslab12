@@ -94,10 +94,7 @@ export class Mensagens extends React.Component{
                     
                 </div>
             </div>
-<<<<<<< HEAD
-=======
         
->>>>>>> 6643fb9ddce2cf6f5333acf18396c4f6ef4daa59
         );
     }
 

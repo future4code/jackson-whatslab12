@@ -4,15 +4,26 @@ import styled from "styled-components"
 const ContainerGrande = styled.div`
 `;
 
+const BoxMessage = styled.section`
+    display: flex;
+    flex-direction: column;
+`
+
 
 const WrapMessages = styled.section`
     display: flex;
-    flex-direction:column-reverse;
-    justify-items:baseline;
+    flex-direction:row;
     height: 70vh;
     width: 90vw;
-    margin-bottom: 35px;
-`
+    margin-bottom: 10px;
+    align-items: flex-end;
+    padding-left: 20px;
+
+    @media (min-width: 698px){
+        width: 85%;
+    }
+`;
+
 const CaixaMensagem = styled.section`
     display:flex;
     flex-direction: column;
@@ -20,20 +31,35 @@ const CaixaMensagem = styled.section`
     justify-content: center;
     padding-left: 16px;
     margin: 17px 7px;
-    height: 8vh;
+    height: 10vh;
     width: 70vw;
     border-radius: 25px;
     background-color: white;
     box-shadow: 5px 5px 3px #d3d3d3;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+
+    @media (min-width: 698px){
+        max-width: 50vw;
+        height: 13vh;
+        font-size: 2rem;
+        padding-left: 2.5rem;
+        font-weight: 400;
+        height: 6rem;
+    }
 `;
 
 const WrapContainer = styled.section`
     display:flex;
-    flex-direction: row;
-    width: ;
+    flex-wrap: wrap;
+    width: 90vw;
 
-`
+    @media (min-width: 698px){
+        max-width: 95%;
+        align-items: baseline;
+        padding-top: 30px;
+        padding-left: 15px;
+    }
+`;
 
 const InputMensagem = styled.input`
     border-radius: 10px;
@@ -41,12 +67,12 @@ const InputMensagem = styled.input`
     box-shadow: -2px 3px 3px;
     font-size: 1.2rem;
     padding-left: 10px;
-    margin: 10px 5px;
+    margin: 6px 5px 5px 10px;
     width: ${props =>{
         if(props.tamanho === "pequeno"){
             return "90px"
         }else if(props.tamanho === "grande"){
-            return "200px"
+            return "300px"
         }
     }};
     height: ${props =>{
@@ -60,13 +86,38 @@ const InputMensagem = styled.input`
     &:focus{
         outline:none;
         box-shadow: -2px 3px purple;
-    }
+    };
+
+    @media (min-width: 698px){
+        width: ${props =>{
+        if(props.tamanho === "pequeno"){
+            return "130px"
+        }else if(props.tamanho === "grande"){
+            return "57%"
+        }
+        }};
+        height: ${props =>{
+        if(props.tamanho === "pequeno"){
+            return "50px"
+        }else{
+            return "60px"
+        }
+    }}; 
+        font-size: 1.5rem;
+        padding-left: 15px;
+    };
+`;
+
+const CaixaButton = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
 `;
 
 const Botao = styled.button`
     width: 150px;
     height: 30px;
-    margin: 20px 0px 20px 90px;
+    margin-top: 20px;
     font-size: 1.2rem;
     font-weight: 700;
     border: 1px solid;
@@ -75,7 +126,12 @@ const Botao = styled.button`
         outline:none;
     }
 
-`
+    @media (min-width: 698px){
+        width: 190px;
+        height: 40px;
+        font-size: 1.7rem;
+    }
+`;
 
 
 export class Mensagens extends React.Component{
@@ -132,7 +188,9 @@ export class Mensagens extends React.Component{
         return (
             <ContainerGrande>
                 <WrapMessages>
-                    {listaDeMensagem}
+                    <BoxMessage>
+                        {listaDeMensagem}
+                    </BoxMessage>
                 </WrapMessages>
                  
                 <WrapContainer>
@@ -147,8 +205,9 @@ export class Mensagens extends React.Component{
                         placeholder={"mensagem"}
                     />
                 </WrapContainer>
-
-                    <Botao onClick={this.novoUsuario}>Enviar</Botao>
+                <CaixaButton>
+                   <Botao onClick={this.novoUsuario}>Enviar</Botao>
+                </CaixaButton>
             </ContainerGrande>
         
         );

@@ -6,8 +6,7 @@ const Father = styled.body`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 `;
 
 const ContainerGrande = styled.main`
@@ -19,7 +18,12 @@ const ContainerGrande = styled.main`
   height: 100vh;
   margin-left: 10px;
   margin-right: 10px;
+  padding-bottom: 15px;
   background-color:#f8f2fb;
+
+  @media (min-width: 698px){
+    max-width: 75vw;
+  }
 `;
 
 function App() {

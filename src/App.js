@@ -2,25 +2,35 @@ import React from 'react';
 import Mensagens from "./components/mensagens/MensagensComp"
 import styled from "styled-components"
 
+const Father = styled.body`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 50px;
+`;
+
 const ContainerGrande = styled.main`
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    border: 1px solid;
-    width: 300px;
-    height: 20em;
-    margin-left: 30em;
-    background-color:#b8bfd8;
-  
-`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  border: 1px solid;
+  width: 100vw;
+  height: 100vh;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color:#f8f2fb;
+`;
 
 function App() {
   return (
-    <ContainerGrande>
+    <Father>
+      <ContainerGrande>
         <Mensagens/>
-    </ContainerGrande>
+      </ContainerGrande>
+    </Father>
   );
-}
+};
 
 export default App;
   

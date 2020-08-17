@@ -4,26 +4,17 @@ import styled from "styled-components"
 
 const Father = styled.body`
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  padding-bottom: 20px;
 `;
 
 const ContainerGrande = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  border: 1px solid;
-  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+  align-items: center;
+  justify-items: center;
   height: 100vh;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-bottom: 15px;
-  background-color:#f8f2fb;
-
-  @media (min-width: 698px){
-    max-width: 75vw;
-  }
+  width:100vw;
 `;
 
 function App() {
